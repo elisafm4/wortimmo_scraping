@@ -25,6 +25,7 @@ def get_data(html_page,num):
     places = []
     rooms = []
     parkings = []
+    agencies = []
     urls = []
 
     house_containers = html_page.find_all('div', class_="c-organism c-property-result-block")
@@ -69,6 +70,11 @@ def get_data(html_page,num):
             if num_parking == '-':
                 num_parking = 0
             parkings.append(int(num_parking))
+            
+            # Agency
+            agency = container.find_all(class_="agency")[0]
+            agency = agency.a['title']
+            agencies.append(agency)
 
             # url
             link = 'https://www.wortimmo.lu' + container.find_all('a')[0].get('href')
@@ -80,20 +86,18 @@ def get_data(html_page,num):
 #             thumbnails.append(img)
 
             # Create dataframe
-        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'URL']
+        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'URL']
 
         wortimmo_df = pd.DataFrame({'Description': descriptions,
                                    str('Price ('+currency+')'): price,
                                    str('Area ('+measure+')'): areas,
                                    'Num. Rooms': rooms,
                                    'Num. Parkings': parkings,
+                                   'Agency': agencies,
                                    'Zone': places,
                                    'URL': urls,
                                   })[cols]
         return wortimmo_df
         print ('Dataframe created')
     else:
-        return"No results found"            
-
-    
-    
+        return"No results found"   
