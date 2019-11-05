@@ -26,6 +26,7 @@ def get_data(html_page,num):
     rooms = []
     parkings = []
     agencies = []
+    tlfs = []
     urls = []
 
     house_containers = html_page.find_all('div', class_="c-organism c-property-result-block")
@@ -74,18 +75,21 @@ def get_data(html_page,num):
             # Agency
             agency = container.find_all(class_="agency")[0]
             agency = agency.a['title']
+            if not agency or agency == None:
+                agency = '-'            
             agencies.append(agency)
-
+            
+            # Tlf
+            tlf = container.find_all('a', class_='c-button c-button__outlined')[0].get('href')
+            if not tlf or tlf == None:
+                tlf = '-' 
+            tlfs.append(tlf)
+         
             # url
             link = 'https://www.wortimmo.lu' + container.find_all('a')[0].get('href')
             urls.append(link)
-
-            # image
-#             img = str(container.find_all('img')[0])
-#             img = img['big-src']
-#             thumbnails.append(img)
-
-            # Create dataframe
+            
+        # Create dataframe
         cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'URL']
 
         wortimmo_df = pd.DataFrame({'Description': descriptions,
