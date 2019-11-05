@@ -2,12 +2,18 @@ def search_by(transaction_type, location, property_type, radius = 0, price_min =
     '''
     function for set the filters applied
     '''
+    # check if a place for rent or buy
+    if transaction_type == 'vente':
+        trans = 'purchase'
+    elif transaction_type == 'location':
+        trans = 'rent'
+        
     wortimmo = str("https://www.wortimmo.lu/en/search?property_search_engine%5BtransactionType%5D="+transaction_type
     +"&property_search_engine%5Blocation%5D="+location
     +"&property_search_engine%5Bradius%5D="+str(radius)
     +"&property_search_engine%5BpropertyTypes%5D%5B%5D="+str(property_type)
-    +"&property_search_engine%5BpurchasePriceMin%5D="+str(price_min)
-    +"&property_search_engine%5BpurchasePriceMax%5D="+str(price_max)
+    +"&property_search_engine%5B"+trans+"PriceMin%5D="+str(price_min)
+    +"&property_search_engine%5B"+trans+"PriceMax%5D="+str(price_max)
     +"&property_search_engine%5BbedroomMin%5D="+str(min_beds)
     +"&property_search_engine%5BbedroomMax%5D="+str(max_beds)
     +"&property_search_engine%5BsurfaceMin%5D="+str(surface_min)
