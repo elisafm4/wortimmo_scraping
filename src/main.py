@@ -22,7 +22,6 @@ html_page = BeautifulSoup(response.text, 'html.parser')
 num = 5 # last 5 adverts
 # get date
 now = datetime.now() # current date and time
-num=5
 date_time = now.strftime("%m_%d_%Y")
 
 # get dataframe and convert into xls
