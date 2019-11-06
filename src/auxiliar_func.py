@@ -1,6 +1,19 @@
 def search_by(transaction_type, location, property_type, radius = 0, price_min = '', price_max = '',min_beds = '',max_beds = '',surface_min = '', surface_max = ''):
     '''
-    function for set the filters applied
+        Function for setting the filters applied. It gives the url to access the data
+        * Inputs:
+            - transaction_type: values accepted 'vente' for buying or 'location' for rent
+            - location: country, city or region. Codes in readme file
+            - property_type: appartment, duplex, farm... Codes in readme file
+            - radius: to extend the search by location
+            - price_min: min price wanted
+            - price_max: max price wanted
+            - min_beds: min number of beds
+            - max_beds: max number of beds
+            - surface_min: min surface in m2
+            - surface_max: max surface in m2
+        * Outputs:
+            - wortimmo:url to search
     '''
    
     # check if a place for rent or buy
@@ -24,7 +37,15 @@ def search_by(transaction_type, location, property_type, radius = 0, price_min =
     
 
 def get_data(html_page,num = 0):
-    
+    '''
+        Function for getting the dataset. 
+        * Inputs:
+            - html_page: html doc with the data of the page
+            - num: (optional) numbers of adverts to include in the dataset
+        * Outputs:
+            - wortimmo_df: dataframe with the information
+                · {description, price, area, num. rooms, num. parkings, zone, agency, contact, url}
+    '''
     
     # setting up the lists that will form our dataframe with all the results
     descriptions = []
