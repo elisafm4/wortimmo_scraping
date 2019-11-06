@@ -26,5 +26,5 @@ date_time = now.strftime("%m_%d_%Y")
 
 # get dataframe and convert into xls
 df = get_data(html_page,num)
-name_excel = str(date_time+'_'+str(num)+'Adverts.xls')
-df.to_excel(name_excel)
+name_excel = str(date_time+'_'+'Pisos-Alquiler_Luxemburgo.csv')
+df.to_csv(name_excel)
