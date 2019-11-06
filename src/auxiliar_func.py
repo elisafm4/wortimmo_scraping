@@ -108,8 +108,8 @@ def get_data(html_page,num = 0):
                                    str('Area ('+measure+')'): areas,
                                    'Num. Rooms': rooms,
                                    'Num. Parkings': parkings,
-                                   'Agency': agencies,
                                    'Zone': places,
+                                   'Agency': agencies,
                                    'URL': urls,
                                   })[cols]
         return wortimmo_df
