@@ -4,7 +4,7 @@
 Esta práctica se ha realizado bajo el contexto de la asignatura Tipología y Ciclo de Vida de los Datos, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de web scraping mediante el lenguaje de programación Python para extraer así datos de la web wortimmo y generar un dataset.
 
 ## Miembros del equipo
-La actividad ha sido realizada por **Elisa Fernández Maraver** y **Francisco Javier Cea Barceló	** 
+La actividad ha sido realizada por **Elisa Fernández Maraver** (elisafm4) y **Francisco Javier Cea Barceló** (jceab) 
 
 ## Ficheros del código fuente
 
