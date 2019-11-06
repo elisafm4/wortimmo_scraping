@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def search_by(transaction_type, location, property_type, radius = 0, price_min = '', price_max = '',min_beds = '',max_beds = '',surface_min = '', surface_max = ''):
     '''
         Function for setting the filters applied. It gives the url to access the data
@@ -83,13 +86,13 @@ def get_data(html_page,num = 0):
             area = area.replace("\n                ","")
             area = area.replace("\n            ","")
             measure = area[-2:]
-            area = "".join(itertools.takewhile(str.isdigit, area))
+            area = int(area[:-2])
             areas.append(area)            
 
             # Rooms
             num_hab = container.find_all('span')[5].text   
             num_hab = num_hab.replace("\n                ","")
-            num_hab = "".join(itertools.takewhile(str.isdigit, num_hab))
+            num_hab = int(num_hab)
             rooms.append(num_hab)
 
             # place
@@ -122,16 +125,16 @@ def get_data(html_page,num = 0):
             urls.append(link)
             
         # Create dataframe
-        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'URL', 'Contact']
+        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'Contact', 'URL']
 
         wortimmo_df = pd.DataFrame({'Description': descriptions,
-                                    str('Price ('+currency+')'): price,
+                                    str('Price ('+currency+')'): prices,
                                     str('Area ('+measure+')'): areas,
                                     'Num. Rooms': rooms,
                                     'Num. Parkings': parkings,
                                     'Zone': places,
                                     'Agency': agencies,
-                                    'Contact': tlfs
+                                    'Contact': tlfs,
                                     'URL': urls,
                                   })[cols]
         return wortimmo_df
