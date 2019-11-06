@@ -101,16 +101,17 @@ def get_data(html_page,num = 0):
             urls.append(link)
             
         # Create dataframe
-        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'URL']
+        cols = ['Description', str('Price ('+currency+')'), str('Area ('+measure+')'), 'Num. Rooms', 'Zone', 'Num. Parkings', 'Agency', 'URL', 'Contact']
 
         wortimmo_df = pd.DataFrame({'Description': descriptions,
-                                   str('Price ('+currency+')'): price,
-                                   str('Area ('+measure+')'): areas,
-                                   'Num. Rooms': rooms,
-                                   'Num. Parkings': parkings,
-                                   'Zone': places,
-                                   'Agency': agencies,
-                                   'URL': urls,
+                                    str('Price ('+currency+')'): price,
+                                    str('Area ('+measure+')'): areas,
+                                    'Num. Rooms': rooms,
+                                    'Num. Parkings': parkings,
+                                    'Zone': places,
+                                    'Agency': agencies,
+                                    'Contact': tlfs
+                                    'URL': urls,
                                   })[cols]
         return wortimmo_df
         print ('Dataframe created')
