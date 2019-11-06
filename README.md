@@ -1,7 +1,7 @@
-# Wortimmo_scraping
+# Práctica 1: Web scraping
 
 ## Descripción
-Esta práctica se ha realizado bajo el contexto de la asignatura Tipología y Ciclo de Vida de los Datos, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de web scraping mediante el lenguaje de programación Python para extraer así datos de la web wortimmo y generar un dataset.
+Esta práctica se ha realizado bajo el contexto de la asignatura Tipología y Ciclo de Vida de los Datos, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de web scraping mediante el lenguaje de programación Python para extraer así datos de la web wortimmo.lu y generar un dataset.
 
 ## Miembros del equipo
 La actividad ha sido realizada por **Elisa Fernández Maraver** (elisafm4) y **Francisco Javier Cea Barceló** (jceab) 
@@ -36,9 +36,9 @@ A continuación se muestran los códigos principales utilizados para poder aplic
 	+ Villa: *18*
 
 ## Bibliografía
-[1] https://github.com/elisafm4/wortimmo_scraping
-[2] Subirats, L., Calvo, M. (2019). Web Scraping. Editorial UOC.
-[3] Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.
-[3] Mitchel, R. (2015). Web Scraping with Python: Collecting Data from the Modern Web. O'Reilly Media, Inc. Chapter 1. Your First Web Scraper.
+* https://github.com/elisafm4/wortimmo_scraping
+* Subirats, L., Calvo, M. (2019). Web Scraping. Editorial UOC.
+* Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.
+* Mitchel, R. (2015). Web Scraping with Python: Collecting Data from the Modern Web. O'Reilly Media, Inc. Chapter 1. Your First Web Scraper.
 	
 	
