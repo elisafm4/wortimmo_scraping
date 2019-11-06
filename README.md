@@ -11,7 +11,7 @@ La actividad ha sido realizada por **Elisa Fernández Maraver** (elisafm4) y **F
 * **src/main.py**: código principal del programa.
 * **src/auxiliar_func.py**: contiene las funciones auxiliares utilizadas: 'search_by' y 'get_data'.
 
-## Códigos necesarios para 'Search_by'
+### *Códigos necesarios para 'Search_by'*
 A continuación se muestran los códigos principales utilizados para poder aplicar los filtros de lugar (*location*) y tipo de propiedad (*property_type*)
 * *location*:
 	+ País:
@@ -34,5 +34,11 @@ A continuación se muestran los códigos principales utilizados para poder aplic
 	+ Farm: *10*
 	+ House: *12*
 	+ Villa: *18*
+
+## Bibliografía
+[1] https://github.com/elisafm4/wortimmo_scraping
+[2] Subirats, L., Calvo, M. (2019). Web Scraping. Editorial UOC.
+[3] Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.
+[3] Mitchel, R. (2015). Web Scraping with Python: Collecting Data from the Modern Web. O'Reilly Media, Inc. Chapter 1. Your First Web Scraper.
 	
 	
