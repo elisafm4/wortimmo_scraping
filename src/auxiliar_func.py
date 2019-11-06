@@ -2,6 +2,7 @@ def search_by(transaction_type, location, property_type, radius = 0, price_min =
     '''
     function for set the filters applied
     '''
+   
     # check if a place for rent or buy
     if transaction_type == 'vente':
         trans = 'purchase'
@@ -22,8 +23,9 @@ def search_by(transaction_type, location, property_type, radius = 0, price_min =
     return wortimmo
     
 
-def get_data(html_page,num):
-
+def get_data(html_page,num = 0):
+    
+    
     # setting up the lists that will form our dataframe with all the results
     descriptions = []
     prices = []
@@ -38,6 +40,9 @@ def get_data(html_page,num):
     house_containers = html_page.find_all('div', class_="c-organism c-property-result-block")
 
     if house_containers != []:
+        # check if want to determine number of adverts to show
+        if num == 0:
+            num = len(house_containers)
         for container in house_containers[0:num]: 
             # Description
             description = container.find_all(class_="c-title")[0].text
